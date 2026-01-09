@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --campus-blue: #1f4d7a;
+        --campus-blue-deep: #153759;
+        --campus-blue-soft: #5b8fcb;
+        --campus-sky: #d8eaff;
+        --campus-sand: #f4f1e8;
+        --campus-forest: #2e5e4e;
+    }
+
+    body {
+        font-family: "Sora", "Work Sans", sans-serif;
+        background-color: var(--campus-sand);
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: "DM Serif Display", "Sora", sans-serif;
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@layer utilities {
+    .animate-fade-up {
+        animation: fade-up 0.6s ease-out both;
+    }
+
+    .sheet-panel {
+        transition: transform 0.35s ease, opacity 0.35s ease;
+        will-change: transform;
+    }
+
+    .sheet-panel[data-open="false"] {
+        transform: translateY(55%);
+        opacity: 0.9;
+    }
+}
